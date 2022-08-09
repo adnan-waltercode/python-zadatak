@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "9442d4f1-8b7d-4f4d-b481-beb5b557de10",
+		"name": "Python simple api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18182337"
+	},
+	"item": [
+		{
+			"name": "User_Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"adnan.mujkic@waltercode.com\",\r\n    \"password\":\"ado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:5000/api/user",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User_Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"adnan.mujkic@waltercode.com\",\r\n    \"password\":\"ado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:5000/api/login",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User_UpdatePassword",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjAwNjI2NTcsImlhdCI6MTY2MDA0NDY1Nywic3ViIjoiYWRuYW4ubXVqa2ljQHdhbHRlcmNvZGUuY29tIn0.zFnh-Nl1hhx9o78Ko2fYyiSsc3pzAImgOqZ3TmchGio",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\" : \"ado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:5000/api/user",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Shopping_Add",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjAwNTA2ODYsImlhdCI6MTY2MDAzMjY4Niwic3ViIjoiYWRuYW4ubXVqa2ljQHdhbHRlcmNvZGUuY29tIn0.4Mn4ANQk3BLat0DkCaYOypkRhtIRRo4xJv22nGGLT9c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "auth",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjAwNTA2ODYsImlhdCI6MTY2MDAzMjY4Niwic3ViIjoiYWRuYW4ubXVqa2ljQHdhbHRlcmNvZGUuY29tIn0.4Mn4ANQk3BLat0DkCaYOypkRhtIRRo4xJv22nGGLT9c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Lista\",\r\n    \"userId\": 1,\r\n    \"productList\":\"Eggs\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:5000/api/shopping",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"shopping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Shopping_Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjAwNTA2ODYsImlhdCI6MTY2MDAzMjY4Niwic3ViIjoiYWRuYW4ubXVqa2ljQHdhbHRlcmNvZGUuY29tIn0.4Mn4ANQk3BLat0DkCaYOypkRhtIRRo4xJv22nGGLT9c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://0.0.0.0:5000/api/shopping?listId=1",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"shopping"
+					],
+					"query": [
+						{
+							"key": "listId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Shopping_Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjAwNTA2ODYsImlhdCI6MTY2MDAzMjY4Niwic3ViIjoiYWRuYW4ubXVqa2ljQHdhbHRlcmNvZGUuY29tIn0.4Mn4ANQk3BLat0DkCaYOypkRhtIRRo4xJv22nGGLT9c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Lista1\",\r\n    \"productList\":\"Eggs, Bread\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:5000/api/shopping?listId=1",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"shopping"
+					],
+					"query": [
+						{
+							"key": "listId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reporting_Generate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjAwNTA2ODYsImlhdCI6MTY2MDAzMjY4Niwic3ViIjoiYWRuYW4ubXVqa2ljQHdhbHRlcmNvZGUuY29tIn0.4Mn4ANQk3BLat0DkCaYOypkRhtIRRo4xJv22nGGLT9c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://0.0.0.0:5000/api/reporting?from=08/08/2022&to=10/08/2022",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"reporting"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "08/08/2022"
+						},
+						{
+							"key": "to",
+							"value": "10/08/2022"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
