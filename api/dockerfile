@@ -3,4 +3,5 @@ RUN mkdir /app
 ADD . /app
 WORKDIR /app
 RUN pip install -r requirments.txt
+ENV FLASK_APP=main.py
 CMD ["python", "main.py"]

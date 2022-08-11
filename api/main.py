@@ -1,16 +1,17 @@
 import os
 from flask import Flask
 from flask_cors import CORS
-from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 from routes import api
 from config import SQLALCHEMY_URI, JWT_KEY
-from models import db
+from sqla import db
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_URI
 app.config['JWT_KEY'] = JWT_KEY
 db.init_app(app)
+Migrate(app, db)
 api.init_app(app)
 CORS(app)
 

@@ -70,7 +70,7 @@ shopping_parse_post.add_argument('productList', type = str, required = False)
 
 class Shopping(Resource):
     @decode_auth_token
-    def post(self):
+    def post(self, user):
         args = shopping_parse_post.parse_args()
             
         listName = args['name']
@@ -83,7 +83,7 @@ class Shopping(Resource):
         
         newShoppingList = ShoppingList(
             name = listName,
-            userId = userId,
+            user_id = userId,
             creationDate = datetime.utcnow(),
             productList = productList
         )
@@ -96,7 +96,7 @@ class Shopping(Resource):
             abort(500, message="Server error")
     
     @decode_auth_token
-    def delete(self):
+    def delete(self, user):
         listId = request.args.get("listId")
         shoppingList = ShoppingList.query.filter_by(id = listId).first()
         if not shoppingList:
@@ -109,7 +109,7 @@ class Shopping(Resource):
         return '', 204
     
     @decode_auth_token
-    def put(self):
+    def put(self, user):
         listId = request.args.get("listId")
         shoppingList = ShoppingList.query.filter_by(id = listId).first()
         if not shoppingList:
@@ -129,7 +129,7 @@ class Shopping(Resource):
  
 class Reporting(Resource):
     @decode_auth_token
-    def get(self):
+    def get(self, user):
         from_date_arg = str(request.args.get("from"))
         to_date_arg = str(request.args.get("to"))
         if not from_date_arg or not to_date_arg:
